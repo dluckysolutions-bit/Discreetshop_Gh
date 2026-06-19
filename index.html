@@ -135,9 +135,9 @@ border-radius:12px;
 }
 
 .category-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:1rem;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
 }
 
 .category{
@@ -395,33 +395,7 @@ View Products & Prices
 
 <h2>Products Available</h2>
 
-<div class="category" data-category="protection">
-     <h3>Condoms</h3>
-  <p>Trusted condom brands and protection options.</p>
-  <img src="images/durex.webp" alt="Durex Condoms">
-
-</div>
-
-
-<div class="category" data-category="emergency-contraception">
-<h3>Emergency Contraception</h3>
-<p>Emergency contraceptive options available for quick delivery.</p>
-<img src="images/Lydia.jpg" alt="Emergency Contraception">  
-</div>
-
-
-<div class="category" data-category="pregnancy-tests">
-    <h3>Pregnancy Tests</h3>
-<p>Reliable home pregnancy test kits available.</p>
-<img src="images/clearblue.webp" alt="Pregnancy Tests">
-
-</div>
-
-<div class="category" data-category="lubricants">
-    <h3>Lubricants</h3>
-<p>Water-based and silicone-based lubricants available.</p>
-<img src="images/skyn.webp" alt="Lubricants">
-</div>
+<div id="categoryGrid" class="category-grid"></div>
 
 </div>
 
@@ -520,33 +494,113 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 
 const modalWhatsapp = document.getElementById("modalWhatsapp");
+
 const categoryData = {
 
   protection: {
-    title: "Protection",
-    description: "Trusted protection products available for discreet purchase and delivery",
-    whatsapp: "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20protection%20options."
-  },
+    title: "Condoms",
 
-  lubricants: {
-    title: "Lubricants",
-    description: "Quality lubricant options available for discreet purchase and delivery",
-    whatsapp: "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20lubricant%20options."
-  },
+    cardDescription:
+    "Trusted condom brands and protection options.",
 
-  "pregnancy-tests": {
-    title: "Pregnancy Tests",
-    description: "Pregnancy test kits available for discreet purchase and delivery",
-    whatsapp: "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20pregnancy%20test%20options."
+    image:
+    "images/durex.webp",
+
+    modalDescription:
+    "Trusted protection products available for discreet purchase and delivery",
+
+    whatsapp:
+    "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20protection%20options."
   },
 
   "emergency-contraception": {
     title: "Emergency Contraception",
-    description: "Emergency contraception delivered quickly, safely, and privately",
-    whatsapp: "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20emergency%20contraception%20options."
-  }
 
+    cardDescription:
+    "Emergency contraceptive options available for quick delivery.",
+
+    image:
+    "images/Lydia.jpg",
+
+    modalDescription:
+    "Emergency contraception delivered quickly, safely, and privately",
+
+    whatsapp:
+    "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20emergency%20contraception%20options."
+  },
+
+  "pregnancy-tests": {
+    title: "Pregnancy Tests",
+
+    cardDescription:
+    "Reliable home pregnancy test kits available.",
+
+    image:
+    "images/clearblue.webp",
+
+    modalDescription:
+    "Pregnancy test kits available for discreet purchase and delivery",
+
+    whatsapp:
+    "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20pregnancy%20test%20options."
+  },
+
+  lubricants: {
+    title: "Lubricants",
+
+    cardDescription:
+    "Water-based and silicone-based lubricants available.",
+
+    image:
+    "images/skyn.webp",
+
+    modalDescription:
+    "Quality lubricant options available for discreet purchase and delivery",
+
+    whatsapp:
+    "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20lubricant%20options."
+  },
+
+  "adult-toys": {
+  title: "Adult Toys & Intimate Products",
+
+  cardDescription:
+  "Explore our range of discreet intimate products.",
+
+  image:
+  "images/dildo copy.webp",
+
+  modalDescription:
+  "Private adult wellness and intimate products available for discreet purchase and delivery.",
+
+  whatsapp:
+  "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20more%20about%20your%20adult%20toys%20and%20intimate%20products."
+}
+
+  
 };
+
+const categoryGrid =
+document.getElementById("categoryGrid");
+
+Object.entries(categoryData).forEach(
+([id, data]) => {
+
+  categoryGrid.innerHTML += `
+    <div class="category"
+         data-category="${id}">
+
+      <h3>${data.title}</h3>
+
+      <p>${data.cardDescription}</p>
+
+      <img src="${data.image}"
+           alt="${data.title}">
+
+    </div>
+  `;
+
+});
 
 const categoryCards = document.querySelectorAll(".category");
 console.log(categoryCards);
@@ -560,7 +614,7 @@ categoryCards.forEach(card => {
 
     modalTitle.textContent = data.title;
 
-    modalDescription.textContent = data.description;
+    modalDescription.textContent = data.modalDescription;
 
     modalWhatsapp.href = data.whatsapp;
 
