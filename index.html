@@ -182,14 +182,6 @@ background:white;
     text-align: center;
 }
 
-#modalTitle{
-    font-size: 26px;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 12px;
-    line-height: 1.2;
-}
-
 #modalDescription{
     font-size: 18px;
     line-height: 1.7;
@@ -221,9 +213,12 @@ background:white;
     font-weight:600;
 
     border-radius:10px;
+
+    transition: all 0.25s ease;
 }
 
 #modalWhatsapp:hover {
+    background:#1EBE5D;
     transform: translateY(-2px);
 }
 
@@ -393,7 +388,7 @@ View Products & Prices
 
 <div class="card">
 
-<h2>Products Available</h2>
+<h2>Shop Intimate Wellness with Confidence</h2>
 
 <div id="categoryGrid" class="category-grid"></div>
 
@@ -452,14 +447,14 @@ View products, check prices, and order through WhatsApp.
 
 <a class="cta"
 onclick="gtag('event', 'whatsapp_click');"
-href="https://wa.me/233558863364?text=I'd%20like%20to%20make%20a%20purchase.">
+href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%2  before % you % proceed.">
 View Products & Prices </a>
 
 <p class="micro-trust">
 ✓ Private WhatsApp Ordering • ✓ No Product Names On Packages</p>
 
 <div class="sticky-button">
-<a href="https://wa.me/233558863364?text=I'd%20like%20to%20make%20a%20purchase."
+<a href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%20delivery%20charges%20and%2  before % you % proceed."
 onclick="gtag('event', 'whatsapp_click');">
 Order on WhatsApp
 </a>
@@ -471,7 +466,6 @@ Order on WhatsApp
 
         <span class="close-modal">&times;</span>
 
-        <h3 id="modalTitle"></h3>
 
         <p id="modalDescription"></p>
 
@@ -489,7 +483,6 @@ Order on WhatsApp
 
 const modal = document.getElementById("categoryModal");
 
-const modalTitle = document.getElementById("modalTitle");
 
 const modalDescription = document.getElementById("modalDescription");
 
@@ -498,7 +491,7 @@ const modalWhatsapp = document.getElementById("modalWhatsapp");
 const categoryData = {
 
   protection: {
-    title: "Condoms",
+    title: "Protection & Peace of Mind",
 
     cardDescription:
     "Trusted condom brands and protection options.",
@@ -507,74 +500,74 @@ const categoryData = {
     "images/durex.webp",
 
     modalDescription:
-    "Trusted protection products available for discreet purchase and delivery",
+    "Protection you can trust. Private purchase. Discreet delivery",
 
     whatsapp:
-    "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20protection%20options."
+    "https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%20delivery%20charges%20and%20payment%20details%2C%20and%20I%27ll%20confirm%20before%20you%20proceed.",
   },
 
   "emergency-contraception": {
     title: "Emergency Contraception",
 
     cardDescription:
-    "Emergency contraceptive options available for quick delivery.",
+    "Support when timing matters",
 
     image:
     "images/Lydia.jpg",
 
     modalDescription:
-    "Emergency contraception delivered quickly, safely, and privately",
+    "Fast access to emergency contraception. Private and discreet delivery.",
 
     whatsapp:
-    "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20emergency%20contraception%20options."
+    "https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%20delivery%20charges%20and%20payment%20details%2C%20and%20I%27ll%20confirm%20before%20you%20proceed.",
   },
 
   "pregnancy-tests": {
     title: "Pregnancy Tests",
 
     cardDescription:
-    "Reliable home pregnancy test kits available.",
+    "Answers when you need them most",
 
     image:
     "images/clearblue.webp",
 
     modalDescription:
-    "Pregnancy test kits available for discreet purchase and delivery",
+    "Trusted results. Private purchase. Discreet delivery",
 
     whatsapp:
-    "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20pregnancy%20test%20options."
+    "https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%20delivery%20charges%20and%20payment%20details%2C%20and%20I%27ll%20confirm%20before%20you%20proceed.",
   },
 
   lubricants: {
-    title: "Lubricants",
+    title: "Comfort & Smoother Moments",
 
     cardDescription:
-    "Water-based and silicone-based lubricants available.",
+    "Enhance comfort and intimacy with trusted lubricant options ",
 
     image:
     "images/skyn.webp",
 
     modalDescription:
-    "Quality lubricant options available for discreet purchase and delivery",
+    "Smoother intimacy. Trusted quality. Discreet delivery",
 
     whatsapp:
-    "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20the%20available%20lubricant%20options."
+    "https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%20delivery%20charges%20and%20payment%20details%2C%20and%20I%27ll%20confirm%20before%20you%20proceed.",
   },
 
   "adult-toys": {
-  title: "Adult Toys & Intimate Products",
+  title: "Pleasure & Enhancement",
 
   cardDescription:
-  "Explore our range of discreet intimate products.",
+  "Enhance pleasure and connection",
 
   image:
   "images/dildo copy.webp",
 
   modalDescription:
-  "Private adult wellness and intimate products available for discreet purchase and delivery.",
+  "Private purchase. Discreet packaging. Reliable delivery",
 
   whatsapp:
-  "https://wa.me/233558863364?text=Hi,%20I'd%20like%20to%20know%20more%20about%20your%20adult%20toys%20and%20intimate%20products."
+  "https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%20delivery%20charges%20and%20payment%20details%2C%20and%20I%27ll%20confirm%20before%20you%20proceed.",
 }
 
   
@@ -611,8 +604,6 @@ categoryCards.forEach(card => {
     const category = card.dataset.category;
 
     const data = categoryData[category];
-
-    modalTitle.textContent = data.title;
 
     modalDescription.textContent = data.modalDescription;
 
