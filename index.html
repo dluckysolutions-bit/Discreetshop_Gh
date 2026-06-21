@@ -39,6 +39,19 @@
 
 <style>
 
+<!--global styles-->
+:root{
+    --primary-green: #2F8F4E;
+    --primary-green-hover: #267543;
+
+    --green-soft-bg: rgba(47,143,78,0.05);
+    --green-soft-border: rgba(47,143,78,0.15);
+
+    --green-icon-bg: rgba(47,143,78,0.12);
+}
+
+
+
 *{
 margin:0;
 padding:0;
@@ -89,7 +102,7 @@ margin:1rem auto;
 display:block;
 width:min(100%,350px);
 margin:2rem auto 0;
-background:#166534;
+background:#2F8F4E;
 color:white;
 padding:1rem;
 border-radius:12px;
@@ -100,7 +113,7 @@ text-align:center;
 }
 
 .cta:hover{
-background:#14532d;
+background:#267543;
 }
 
 .trust-grid{
@@ -111,7 +124,7 @@ margin-top:2rem;
 }
 
 .trust-item{
-   background:#f4fbf6;
+   background:rgba(47,143,78,0.05);
     color:#1f2937;
    border:1px solid #dcefe1;
     padding:1rem;
@@ -122,8 +135,8 @@ margin-top:2rem;
 }
 
 .trust-item:hover{
-    background:#eef8f1;
-    border-color:#2f6f44;
+    background:rgba(47,143,78,0.10);
+    border-color: rgba(47,143,78,0.25);
     transform:translateY(-2px);
 }
 
@@ -158,10 +171,10 @@ gap:1rem;
     border-color:#cfe3d3;
 }
 
-.step img{
+.step-icon{
     width:24px;
     height:24px;
-    flex-shrink:0;
+    display:block;
 }
 
 
@@ -173,26 +186,37 @@ gap:1rem;
 }
 
 
-
 .browse svg{
     color:#2563eb;
 }
-
 .location svg{
     color:#16a34a;
 }
-
 .payment svg{
     color:#d97706;
 }
-
 .receive svg{
     color:#7c3aed;
 }
 
 
+.step-icon-wrap{
+    width:36px;
+    height:36px;
+    min-width:36px;
+    border-radius:50%;
+    background:var(--green-icon-bg);
 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
+.step-icon{
+    width:24px;
+    height:24px;
+    display:block;
+}
 
 
 .category-grid{
@@ -266,7 +290,7 @@ background:white;
     padding:16px;
     margin-top:24px;
 
-    background:#25D366;
+    background:#2F8F4E;
     color:white;
 
     text-decoration:none;
@@ -279,7 +303,7 @@ background:white;
 }
 
 #modalWhatsapp:hover {
-    background:#1EBE5D;
+    background:#267543;
     transform: translateY(-2px);
 }
 
@@ -287,6 +311,81 @@ background:white;
 .category {
     cursor: pointer;
 }
+
+
+.coverage-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-top:1rem;
+    padding:0.85rem 1.5rem;
+
+    background:#2F8F4E;
+    color:white;
+
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+
+    transition:all .2s ease;
+}
+
+.coverage-cta:hover{
+    background:#267543;
+    transform:translateY(-2px);
+}
+
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:0.75rem;
+    margin-bottom:2rem;
+}
+
+.section-title h2{
+    margin:0;
+    line-height:1;
+}
+
+.section-icon-wrap{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+
+    background:rgba(47,143,78,0.20);
+    border:1px solid rgba(47,143,78,0.20);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.section-icon{
+    width:24px;
+    height:24px;
+}
+
+
+.coverage-benefits{
+    display:grid;
+    gap:0.75rem;
+    margin:1.5rem 0 2rem;
+    max-width:550px;
+}
+
+.coverage-benefit{
+    padding:0.75rem 1rem;
+
+    border-left:3px solid var(--primary-green);
+    background:var(--green-soft-bg);
+
+    border-radius:0 8px 8px 0;
+
+    color:var(--text-color);
+    font-weight:500;
+}
+
 
 .faq{
 margin-bottom:1rem;
@@ -384,13 +483,13 @@ Avoid Awkward Pharmacy Visits.
 
 
 <p class="hero-subheadline">
-Get condoms, lubricants & Post-pills delivered discreetly across Takoradi today
+Get condoms, lubricants & Post-pills delivered discreetly across Sekondi-Takoradi today
 </p>
 
 
 <a class="cta"
 onclick="gtag('event', 'whatsapp_click');"
-href="https://wa.me/233558863364?text=I'd%20like%20to%20make%20a%20purchase.">
+href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%2  before % you % proceed.">
 Browse Products & Prices
 </a>
 
@@ -429,22 +528,30 @@ Browse Products & Prices
 <div class="steps">
 
     <div class="step">
-    <img src="steps svg/shopping-cart (1).svg" class="step-icon" alt="">
-    <span>Browse Products</span>
-</div>
+        <div class="step-icon-wrap">
+            <img src="steps svg/shopping-cart (1).svg" class="step-icon" alt="">
+        </div>
+        <span>Browse Products</span>
+    </div>
 
    <div class="step">
-    <img src="steps svg/map-pinned.svg" class="step-icon" alt="">
+    <div class="step-icon-wrap">
+        <img src="steps svg/map-pinned.svg" class="step-icon" alt="">
+    </div>
     <span>Send Delivery Location</span>
 </div>
 
     <div class="step">
-    <img src="steps svg/smartphone.svg" class="step-icon" alt="">
-    <span>Pay With Mobile Money</span>
-</div>
+        <div class="step-icon-wrap">
+            <img src="steps svg/smartphone.svg" class="step-icon" alt="">
+        </div>
+        <span>Pay With Mobile Money</span>
+    </div>
 
     <div class="step">
-    <img src="steps svg/package-check.svg" class="step-icon" alt="">
+        <div class="step-icon-wrap">
+            <img src="steps svg/package-check.svg" class="step-icon" alt="">
+        </div>
     <span>Receive Privately</span>
 </div>
 
@@ -464,19 +571,42 @@ Browse Products & Prices
 
 </div>
 
-<div class="card">
+<div class="section-title">
+    <div class="section-icon-wrap">
+        <img src="steps svg/map-pinned.svg" class="section-icon" alt="">
+    </div>
 
-<h2>Delivery Coverage</h2>
+    <h2>Delivery Coverage</h2>
+</div>
 
-<p>Order condoms, lubricants, pregnancy tests, and other intimate essentials from the privacy of your phone.</p>
 
-<ul>
+<div class="coverage-benefits">
+    <div class="coverage-benefit">
+         Same-Day Delivery in Sekondi-Takoradi
+    </div>
 
-<li>Same-day delivery in selected cities</li> 
+    <div class="coverage-benefit">
+         Nationwide Delivery Across Ghana
+    </div>
 
-<li>1–3 day delivery nationwide</li>
+    <div class="coverage-benefit">
+         Discreet Packaging on All Orders
+    </div>
 
-</ul>
+    <div class="coverage-benefit">
+        Mobile Money Payments Accepted
+    </div>
+</div>
+
+<br>    
+<p>Not sure if we deliver to your area?</p>
+<br> 
+
+<a href="https://wa.me/233558863364?text=Hi%2C%20I'd%20like%20to%20place%20an%20order.%0A%0ADelivery%20location%3A"
+   class="coverage-cta"
+   target="_blank">
+   Check Delivery Availability
+</a>
 
 </div>
 
@@ -562,7 +692,7 @@ const modalWhatsapp = document.getElementById("modalWhatsapp");
 const categoryData = {
 
   protection: {
-    title: "Protection & Peace of Mind",
+    title: "Condoms & Protection",
 
     cardDescription:
     "Trusted condom brands and protection options.",
