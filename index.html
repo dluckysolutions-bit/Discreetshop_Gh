@@ -177,6 +177,22 @@ gap:1rem;
     display:block;
 }
 
+.browse .step-icon-wrap{
+    background:rgba(59,130,246,.15);
+}
+
+.location .step-icon-wrap{
+    background:#e1bebe
+}
+
+.payment .step-icon-wrap{
+    background:rgba(245,158,11,.15);
+}
+
+.receive .step-icon-wrap{
+    background:rgba(139,92,246,.15);
+}
+
 
 .steps-note{
     text-align:center;
@@ -190,7 +206,7 @@ gap:1rem;
     color:#2563eb;
 }
 .location svg{
-    color:#16a34a;
+    color:#600584;
 }
 .payment svg{
     color:#d97706;
@@ -210,6 +226,7 @@ gap:1rem;
     display:flex;
     align-items:center;
     justify-content:center;
+     flex-shrink:0;
 }
 
 .step-icon{
@@ -354,7 +371,7 @@ background:white;
     height:40px;
     border-radius:50%;
 
-    background:rgba(47,143,78,0.20);
+    background:rgba(204, 122, 122, 0.2);
     border:1px solid rgba(47,143,78,0.20);
 
     display:flex;
@@ -369,7 +386,7 @@ background:white;
 
 .coverage-benefits{
     display:grid;
-    gap:0.75rem;
+    gap: 10px;;
     margin:1.5rem 0 2rem;
     max-width:550px;
 }
@@ -377,8 +394,8 @@ background:white;
 .coverage-benefit{
     padding:0.75rem 1rem;
 
-    border-left:3px solid var(--primary-green);
-    background:var(--green-soft-bg);
+    border-left:4px solid #2F8F4E;
+    background:rgba(47,143,78,0.05);
 
     border-radius:0 8px 8px 0;
 
@@ -527,28 +544,28 @@ Browse Products & Prices
 
 <div class="steps">
 
-    <div class="step">
+    <div class="step browse">
         <div class="step-icon-wrap">
             <img src="steps svg/shopping-cart (1).svg" class="step-icon" alt="">
         </div>
         <span>Browse Products</span>
     </div>
 
-   <div class="step">
+   <div class="step location">
     <div class="step-icon-wrap">
         <img src="steps svg/map-pinned.svg" class="step-icon" alt="">
     </div>
     <span>Send Delivery Location</span>
 </div>
 
-    <div class="step">
+    <div class="step payment">
         <div class="step-icon-wrap">
             <img src="steps svg/smartphone.svg" class="step-icon" alt="">
         </div>
         <span>Pay With Mobile Money</span>
     </div>
 
-    <div class="step">
+    <div class="step receive">
         <div class="step-icon-wrap">
             <img src="steps svg/package-check.svg" class="step-icon" alt="">
         </div>
@@ -556,6 +573,9 @@ Browse Products & Prices
 </div>
 
 </div>
+
+
+
 
 <p class="steps-note">
    Private ordering. Fast delivery. No pharmacy queues.
@@ -570,6 +590,8 @@ Browse Products & Prices
 <div id="categoryGrid" class="category-grid"></div>
 
 </div>
+
+<div class="card">
 
 <div class="section-title">
     <div class="section-icon-wrap">
@@ -592,15 +614,7 @@ Browse Products & Prices
     <div class="coverage-benefit">
          Discreet Packaging on All Orders
     </div>
-
-    <div class="coverage-benefit">
-        Mobile Money Payments Accepted
-    </div>
 </div>
-
-<br>    
-<p>Not sure if we deliver to your area?</p>
-<br> 
 
 <a href="https://wa.me/233558863364?text=Hi%2C%20I'd%20like%20to%20place%20an%20order.%0A%0ADelivery%20location%3A"
    class="coverage-cta"
