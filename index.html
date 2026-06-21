@@ -39,7 +39,7 @@
 
 <style>
 
-<!--global styles-->
+<!--global styles
 :root{
     --primary-green: #2F8F4E;
     --primary-green-hover: #267543;
@@ -49,7 +49,7 @@
 
     --green-icon-bg: rgba(47,143,78,0.12);
 }
-
+-->
 
 
 *{
@@ -237,26 +237,57 @@ gap:1rem;
 
 
 .category-grid{
-    display:flex;
-    flex-direction:column;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
     gap:1rem;
 }
 
+@media (max-width:768px){
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
 .category{
-background:#fafafa;
-padding:1rem;
-border-radius:12px;
-overflow:hidden;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+
+    background:#fafafa;
+    padding:1rem;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.category-content{
+    flex:1;
 }
 
 .category img{
-width:100%;
-height:180px;
-object-fit:contain;
-border-radius:10px;
-margin-bottom:1rem;
-background:white;
+    width:110px;
+    height:110px;
+
+    object-fit:contain;
+
+    background:white;
+    border-radius:10px;
+
+    flex-shrink:0;
+
+    margin:0;
 }
+
+.category {
+    cursor: pointer;
+}
+
+.category:hover {
+    transform: translateY(-4px);
+}
+
+
 
 .modal {
     display: none;
@@ -325,9 +356,7 @@ background:white;
 }
 
 
-.category {
-    cursor: pointer;
-}
+
 
 
 .coverage-cta{
@@ -404,25 +433,40 @@ background:white;
 }
 
 
-.faq{
-margin-bottom:1rem;
+.faq-item{
+    border-bottom:1px solid rgba(0,0,0,0.08);
 }
 
-.faq p{
-margin-top:0.3rem;
+.faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    padding:1rem 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--text-color);
+    text-align:left;
 }
 
-.faq strong{
-display:block;
-margin-bottom:0.5rem;
+.faq-question span{
+    font-size:1.25rem;
+    color:var(--primary-color);
 }
 
-ul{
-padding-left:20px;
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease;
 }
 
-li{
-margin-bottom:10px;
+.faq-answer p{
+    padding:0 0 1rem;
+    margin:0;
+    color:var(--muted-text);
 }
 
 .sticky-button{
@@ -477,9 +521,6 @@ font-weight:500;
 text-align:center;
 }
 
-.category:hover {
-    transform: translateY(-4px);
-}
 
 </style>
 
@@ -591,8 +632,11 @@ Browse Products & Prices
 
 </div>
 
+
 <div class="card">
 
+
+    <!-- Delivery Coverage Section
 <div class="section-title">
     <div class="section-icon-wrap">
         <img src="steps svg/map-pinned.svg" class="section-icon" alt="">
@@ -601,7 +645,7 @@ Browse Products & Prices
     <h2>Delivery Coverage</h2>
 </div>
 
-
+ 
 <div class="coverage-benefits">
     <div class="coverage-benefit">
          Same-Day Delivery in Sekondi-Takoradi
@@ -623,37 +667,76 @@ Browse Products & Prices
 </a>
 
 </div>
+-->  
 
 <div class="card">
 
-<h2>Frequently Asked Questions</h2>
+    <h2>Why Customers Choose Discreet Delivery</h2>
 
-<div class="faq">
-<strong>Are your products genuine?</strong>
-Yes. We only supply authentic products.
+    <div class="faq-item">
+        <button class="faq-question">
+            Avoid Awkward Pharmacy Visits
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                Order privately from your phone without standing in queues or discussing personal products at a pharmacy counter.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Discreet Packaging
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                Product names never appear on packaging, helping protect your privacy from ordering to delivery.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Genuine Products Only
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                We only supply authentic products sourced from trusted brands and distributors.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Order Through WhatsApp
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                Browse products, ask questions, confirm delivery details and place your order directly through WhatsApp.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Fast & Reliable Delivery
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                Same-day delivery is available in Sekondi-Takoradi, with nationwide delivery available across Ghana.
+            </p>
+        </div>
+    </div>
+
 </div>
-
-<div class="faq">
-<strong>How long does delivery take?</strong>
-Same-day delivery in selected cities and 1–3 days elsewhere.
-</div>
-
-<div class="faq">
-<strong>Will my package reveal what's inside?</strong>
-No. Product names never appear on packaging.
-</div>
-
-
-<div class="faq">
-<strong>Do I need to visit a shop?</strong>
-No. Everything is handled through WhatsApp.
-</div>
-
-</div>
-
 <div class="card hero">
 
-<h2>Need Something Delivered Privately?</h2>
+<h2>Ready to Order?</h2>
 
 <p>
 View products, check prices, and order through WhatsApp.
@@ -794,19 +877,25 @@ document.getElementById("categoryGrid");
 Object.entries(categoryData).forEach(
 ([id, data]) => {
 
-  categoryGrid.innerHTML += `
-    <div class="category"
-         data-category="${id}">
+ categoryGrid.innerHTML += `
 
-      <h3>${data.title}</h3>
+<div class="category"
+     data-category="${id}">
 
-      <p>${data.cardDescription}</p>
+    <img src="${data.image}"
+         alt="${data.title}">
 
-      <img src="${data.image}"
-           alt="${data.title}">
+    <div class="category-content">
+
+        <h3>${data.title}</h3>
+
+        <p>${data.cardDescription}</p>
 
     </div>
-  `;
+
+</div>
+
+`;
 
 });
 
@@ -857,6 +946,37 @@ document.addEventListener('keydown', (e) => {
     ) {
       categoryModal.style.display = "none";
     }
+});
+
+
+
+document.querySelectorAll('.faq-question').forEach(question => {
+
+    question.addEventListener('click', () => {
+
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('span');
+
+        if(answer.style.maxHeight){
+
+            answer.style.maxHeight = null;
+            icon.textContent = '+';
+
+        } else {
+
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.style.maxHeight = null;
+            });
+
+            document.querySelectorAll('.faq-question span').forEach(item => {
+                item.textContent = '+';
+            });
+
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.textContent = '−';
+        }
+    });
+
 });
 
 </script>
