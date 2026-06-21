@@ -72,8 +72,8 @@ text-align:center;
 }
 
 .hero h1{
-font-size:clamp(2.4rem,5vw,4.8rem);
-line-height:1;
+font-size: clamp(2.8rem, 6vw, 5rem);
+line-height: 1.05;
 font-weight:800;
 letter-spacing:-0.04em;
 margin-bottom:1rem;
@@ -111,11 +111,20 @@ margin-top:2rem;
 }
 
 .trust-item{
-background:#fafafa;
-padding:1rem;
-border-radius:12px;
-text-align:center;
-font-weight:bold;
+   background:#f4fbf6;
+    color:#1f2937;
+   border:1px solid #dcefe1;
+    padding:1rem;
+    border-radius:12px;
+    text-align:center;
+    font-weight:600;
+    transition:all 0.2s ease;
+}
+
+.trust-item:hover{
+    background:#eef8f1;
+    border-color:#2f6f44;
+    transform:translateY(-2px);
 }
 
 h2{
@@ -129,10 +138,62 @@ gap:1rem;
 }
 
 .step{
-background:#fafafa;
-padding:1rem;
-border-radius:12px;
+    background:#ffffff;
+    border:1px solid #e8ecef;
+    border-radius:12px;
+    padding:0.85rem 1.25rem;
+    font-size:1.15rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    transition:all 0.2s ease;
 }
+
+
+
+.step:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    border-color:#cfe3d3;
+}
+
+.step img{
+    width:24px;
+    height:24px;
+    flex-shrink:0;
+}
+
+
+.steps-note{
+    text-align:center;
+    margin-top:2rem;
+    color:#666;
+    font-size:1rem;
+}
+
+
+
+.browse svg{
+    color:#2563eb;
+}
+
+.location svg{
+    color:#16a34a;
+}
+
+.payment svg{
+    color:#d97706;
+}
+
+.receive svg{
+    color:#7c3aed;
+}
+
+
+
+
+
 
 .category-grid{
     display:flex;
@@ -318,41 +379,41 @@ text-align:center;
 <div class="card hero">
 
 <h1>
-Buy Condoms, Lubricants & Intimate Products Online in Ghana
+Avoid Awkward Pharmacy Visits.
 </h1>
 
 
 <p class="hero-subheadline">
-Private matters, handled privately.
+Get condoms, lubricants & Post-pills delivered discreetly across Takoradi today
 </p>
 
 
 <a class="cta"
 onclick="gtag('event', 'whatsapp_click');"
 href="https://wa.me/233558863364?text=I'd%20like%20to%20make%20a%20purchase.">
-View Products & Prices
+Browse Products & Prices
 </a>
 
 <div class="trust-grid">
 
 <div class="trust-item">
 <img class="trust-icon" src="icons/shield.svg" alt="">
-<p>Keep It Private</p>
+<p>500+ Orders Delivered Privately</p>
 </div>
 
 <div class="trust-item">
 <img class="trust-icon" src="icons/package.svg" alt="">
-<p>Contents Hidden</p>
+<p>Hidden Packaging</p>
 </div>
 
 <div class="trust-item">
 <img class="trust-icon" src="icons/check.svg" alt="">
-<p>Genuine Brands Only</p>
+<p>Genuine Products Only</p>
 </div>
 
 <div class="trust-item">
 <img class="trust-icon" src="icons/truck.svg" alt="">
-<p>Delivered Today</p>
+<p>Same-Day Delivery</p>
 </div>
 
 </div>
@@ -363,26 +424,35 @@ View Products & Prices
 <div class="card">
 
 <h2>How It Works</h2>
+<p> Get what you need delivered privately in just a few minutes.</p>
 
 <div class="steps">
 
-<div class="step">
-    Browse products on WhatsApp
+    <div class="step">
+    <img src="steps svg/shopping-cart (1).svg" class="step-icon" alt="">
+    <span>Browse Products</span>
 </div>
 
-<div class="step">
-    Confirm your order
+   <div class="step">
+    <img src="steps svg/map-pinned.svg" class="step-icon" alt="">
+    <span>Send Delivery Location</span>
 </div>
 
-<div class="step">
-    Pay with Mobile Money
+    <div class="step">
+    <img src="steps svg/smartphone.svg" class="step-icon" alt="">
+    <span>Pay With Mobile Money</span>
 </div>
 
-<div class="step">
-    Delivered Privately
+    <div class="step">
+    <img src="steps svg/package-check.svg" class="step-icon" alt="">
+    <span>Receive Privately</span>
 </div>
 
 </div>
+
+<p class="steps-note">
+   Private ordering. Fast delivery. No pharmacy queues.
+</p>
 
 </div>
 
@@ -448,10 +518,11 @@ View products, check prices, and order through WhatsApp.
 <a class="cta"
 onclick="gtag('event', 'whatsapp_click');"
 href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%2  before % you % proceed.">
-View Products & Prices </a>
+Order Privately Now </a>
 
 <p class="micro-trust">
-✓ Private WhatsApp Ordering • ✓ No Product Names On Packages</p>
+Private matters, handled privately.
+</p>
 
 <div class="sticky-button">
 <a href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%20delivery%20charges%20and%2  before % you % proceed."
