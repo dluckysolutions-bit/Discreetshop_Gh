@@ -49,7 +49,7 @@ font-family:'Manrope',sans-serif;
 background:#f5f5f5;
 color:#222;
 line-height:1.6;
-padding-bottom:50px;
+padding-bottom:0px;
 }
 
 .container{
@@ -58,10 +58,14 @@ margin-inline:auto;
 padding:1rem 0;
 }
 
+.card:last-child {
+    margin-bottom: 0;
+}
+
 .card{
 background:white;
 padding:clamp(1.25rem,3vw,2.5rem);
-margin-bottom:1.5rem;
+margin-bottom:0 rem;
 border-radius:18px;
 box-shadow:0 8px 24px rgba(0,0,0,0.08);
 }
@@ -721,18 +725,17 @@ Browse Products & Prices
 
 <div class="card hero">
 
-<h2>Order Privately on WhatsApp</h2>
+    <h2>Order Privately on WhatsApp</h2>
+    <p>
+        View products, check prices, and order through WhatsApp.
+    </p>
 
-<p>
-View products, check prices, and order through WhatsApp.
-</p>
 
-
-<a class="cta"
-onclick="gtag('event', 'whatsapp_click');"
-href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%2  before % you % proceed.">
-Order Privately Now </a>
-
+    <a class="cta"
+    onclick="gtag('event', 'whatsapp_click');"
+    href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%2  before % you % proceed.">
+    Order Privately Now </a>
+    
 <div>   
 
 <div id="categoryModal" class="modal">
