@@ -38,20 +38,6 @@
 
 
 <style>
-
-<!--global styles
-:root{
-    --primary-green: #2F8F4E;
-    --primary-green-hover: #267543;
-
-    --green-soft-bg: rgba(47,143,78,0.05);
-    --green-soft-border: rgba(47,143,78,0.15);
-
-    --green-icon-bg: rgba(47,143,78,0.12);
-}
--->
-
-
 *{
 margin:0;
 padding:0;
@@ -63,7 +49,7 @@ font-family:'Manrope',sans-serif;
 background:#f5f5f5;
 color:#222;
 line-height:1.6;
-padding-bottom:90px;
+padding-bottom:50px;
 }
 
 .container{
@@ -94,7 +80,7 @@ margin-bottom:1rem;
 
 .hero-subheadline{
 font-size:1.1rem;
-max-width:700px;
+max-width:750px;
 margin:1rem auto;
 }
 
@@ -221,18 +207,12 @@ gap:1rem;
     height:36px;
     min-width:36px;
     border-radius:50%;
-    background:var(--green-icon-bg);
+    background:rgba(47,143,78,.18);
 
     display:flex;
     align-items:center;
     justify-content:center;
      flex-shrink:0;
-}
-
-.step-icon{
-    width:24px;
-    height:24px;
-    display:block;
 }
 
 
@@ -412,7 +392,7 @@ gap:1rem;
     height:24px;
 }
 
-
+/* * 
 .coverage-benefits{
     display:grid;
     gap: 10px;;
@@ -431,7 +411,7 @@ gap:1rem;
     color:var(--text-color);
     font-weight:500;
 }
-
+*/
 
 .faq-item{
     border-bottom:1px solid rgba(0,0,0,0.08);
@@ -448,13 +428,13 @@ gap:1rem;
     cursor:pointer;
     font-size:1rem;
     font-weight:600;
-    color:var(--text-color);
+    color: #222;
     text-align:left;
 }
 
 .faq-question span{
     font-size:1.25rem;
-    color:var(--primary-color);
+    color:#2F8F4E;
 }
 
 .faq-answer{
@@ -466,7 +446,7 @@ gap:1rem;
 .faq-answer p{
     padding:0 0 1rem;
     margin:0;
-    color:var(--muted-text);
+    color:#267543;
 }
 
 .sticky-button{
@@ -485,6 +465,10 @@ color:white;
 text-decoration:none;
 font-weight:bold;
 font-size:18px;
+}
+
+.sticky-button{
+    display:none;
 }
 
 img{
@@ -734,29 +718,22 @@ Browse Products & Prices
     </div>
 
 </div>
+
 <div class="card hero">
 
-<h2>Ready to Order?</h2>
+<h2>Order Privately on WhatsApp</h2>
 
 <p>
 View products, check prices, and order through WhatsApp.
 </p>
+
 
 <a class="cta"
 onclick="gtag('event', 'whatsapp_click');"
 href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%2  before % you % proceed.">
 Order Privately Now </a>
 
-<p class="micro-trust">
-Private matters, handled privately.
-</p>
-
-<div class="sticky-button">
-<a href="https://wa.me/233558863364?text=Hi%20Lucky%2C%0A%0AI%27d%20like%20to%20place%20the%20following%20order%3A%0A%0AProduct%28s%29%3A%0A1.%0A2.%0A%0ADelivery%20Location%20%2F%20Google%20Maps%20Pin%3A%0A%0APreferred%20Delivery%20Time%3A%0A%28ASAP%20or%20specify%20a%20time%29%0A%0APlease%20send%20me%20a%20quotation%2C%20including%20delivery%20charges%20and%2  before % you % proceed."
-onclick="gtag('event', 'whatsapp_click');">
-Order on WhatsApp
-</a>
-</div>
+<div>   
 
 <div id="categoryModal" class="modal">
 
@@ -792,7 +769,7 @@ const categoryData = {
     title: "Condoms & Protection",
 
     cardDescription:
-    "Trusted condom brands and protection options.",
+    "Condoms from trusted brands.",
 
     image:
     "images/durex.webp",
@@ -840,7 +817,7 @@ const categoryData = {
     title: "Comfort & Smoother Moments",
 
     cardDescription:
-    "Enhance comfort and intimacy with trusted lubricant options ",
+    "Lubricants for comfort and intimacy.",
 
     image:
     "images/skyn.webp",
